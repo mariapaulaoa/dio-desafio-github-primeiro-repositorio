@@ -1,0 +1,44 @@
+Git: é um sistema de versionamento de código distribuído, isto é, ele é um software que auxilia na criação e monitoramento de diferentes versões de um código dentro de uma máquina.
+GitHub: pertence à Microsoft e funciona como um repositório de código e suas versões.
+
+Benefícios de aprender Git e GitHub:
+	1- Controle de Versão;
+	2- Armazenamento em nuvem;
+	3- Trabalho em equipe;
+	4- Melhorar código;
+	5- Reconhecimento.
+
+GUI (Graphic User Interface) x CLI (Common Line Interface)
+↳ A maioria dos sistemas operacionais tem programas que possuem interface gráfica, ou seja, a forma que o usuário interage com esse programas é de forma gráfica (clicar, arrastar, etc), tudo responde aos comandos do usuário. Porém o Git foi desenvolvido para outro tipo de programa, para interação por linha de comando.
+
+Comandos básicos para navegar utilizando o CLI/terminal:
+PS: Usuários de Windows interagem com o terminal e rodam determinados comendos de forma diferente de usuários de sistemas operacionais Unix Like (Linux ou MacOS).
+	• Listar: serve para se situar dentro de um sistema operacional, para saber onde se está dentro dele. Mostra a lista de diretórios existentes dentro da pasta onde se está localizado.
+		Windows → dir
+		Unix → ls
+	• Navegar: permite navegar entre as pastas/diretórios.
+		Windows → cd algum direcionamento para essa navegação (EX: nome de uma pasta específica)
+		Unix → cd algum direcionamento para essa navegação
+	• Limpar: utilizado para limpar a tela do terminal.
+		Windows → cls
+		Unix → clear ou ctrl+L
+	• Criar: utilizado para criar uma nova pasta.
+		Windows → mkdir nome da pasta
+		Unix → mkdir nome da pasta
+	• Deletar: utilizado para excluir diretórios e arquivos.
+		Windows → del nome da pasta (exclui arquivos)
+				rmdir nome da pasta (exclui a pasta inteira e tudo que tem nela)
+		Unix → rm - rf nome da pasta
+
+Tab serve para autocompletar palavras
+cd . . sai de uma pasta
+______________________________________________________________________________________________________
+
+Objetos internos do Git
+
+Três tipos básicos de objeto do Git:
+	• Blobs: esse objeto contém metadados dentro dele. Desse modo, o objeto blob aramazena o tipo do objeto (blob), o tamanho da string ou do arquivo, \0 e o conteúdo propriamente dito desse arquivo. Bloco básico de composição. 
+	Funcionam como arquivos.
+	• Trees: armazenam blobs e apontam para blobs e commits diferentes. Dessa forma, tem-se que trees também contêm metadados (\0, um determinado blob que possui um sha1, um sha1 próprio da árvore, nome do arquivo, etc). O blob não guarda o nome do arquivo, apenas o sha1. Trees, por sua vez, são responsáveis por montar toda a estrutura de onde estão localizados os arquivos, e, por essa razão, podem apontar para blobs e outras trees.
+	Funcionam como pastas que guardam arquivos (blobs).
+	• Commits: aponta para uma tree, para um parente (o último commit realizado antes dele), para um autor e para uma mensagem (explica/dá significado aos arquivos e pastas aos quais se referem os blob e trees, respectivamente). Commits também possuem um timestamp (data e horário extaos de sua criação). Commits também possuem um sha1.
